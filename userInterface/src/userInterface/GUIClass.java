@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+
 /*import javafx.scene.layout.GridPane;*/
 
 public class GUIClass {
@@ -53,6 +54,15 @@ public class GUIClass {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
+				}
+			}
+			
+			//Third option changes frame background color to random hue of green
+			option3.setOnAction(EventHandlerActionEvent) new EventHandlerActionEvent() {
+				@Override
+				public void handle(ActionEvent event) {
+					GreenColorRandomizer greenColor = getRandomGreenColor();
+					stage.getScene().setFill(greenColor);
 				}
 			}
 			
