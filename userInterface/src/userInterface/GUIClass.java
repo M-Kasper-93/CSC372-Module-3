@@ -27,6 +27,7 @@ public class GUIClass {
 			TextField dateTime = null;
 			TextField userInput = null;
 			
+			MenuBar menuBar = new MenuBar();
 			MenuItem option1 = new MenuItem("Display date and time");
 			MenuItem option2 = new MenuItem("Generate .txt file");
 			MenuItem option3 = new MenuItem("Change frame color");
@@ -66,6 +67,13 @@ public class GUIClass {
 				}
 			}
 			
+			//Fourth option exits the program
+			option4.setOnAction(EventHandlerActionEvent) new EventHandlerActionEvent() {
+				@Override
+				public void handle(ActionEvent event) {
+					stage.close();
+				}
+			}
 			
 			/*GridPane gridPane = null;
 			
