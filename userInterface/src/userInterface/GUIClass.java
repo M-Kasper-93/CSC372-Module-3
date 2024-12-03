@@ -15,19 +15,19 @@ import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/*import javafx.scene.layout.GridPane;*/
-
 public class GUIClass {
 	public class GUIClass extends Application {
 		Label label = null;
 		Button button = null;
 		@Override
 		public void start(Stage stage) {
-			Scene scene = null;
+			HBox hbox = new HBox();
+			Scene scene = new Scene(HBox, 400, 400);
 			TextField dateTime = null;
 			TextField userInput = null;
 			
 			MenuBar menuBar = new MenuBar();
+			Menu options = new Menu("Options");
 			MenuItem option1 = new MenuItem("Display date and time");
 			MenuItem option2 = new MenuItem("Generate .txt file");
 			MenuItem option3 = new MenuItem("Change frame color");
@@ -75,16 +75,12 @@ public class GUIClass {
 				}
 			}
 			
-			/*GridPane gridPane = null;
+			options.getMenus().add(option1);
+			options.getMenus().add(option2);
+			options.getMenus().add(option3);
+			options.getMenus().add(option4);
 			
-			gridPane = new GridPane();
-			scene = new Scene(gridPane);*/
-			
-			
-			
-			
-			
-			
+			HBox.getChildren().add(menuBar);
 			
 			stage.setScene(scene);
 			stage.setTitle("User Interface I");
