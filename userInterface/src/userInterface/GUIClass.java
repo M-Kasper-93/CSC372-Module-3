@@ -3,12 +3,11 @@
 package userInterface;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.paint.Color;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -17,7 +16,6 @@ import java.time.LocalDateTime;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Random;
 
 public class GUIClass extends Application {
     @Override
@@ -55,7 +53,7 @@ public class GUIClass extends Application {
 
         //Third option: Change background color to a random green hue
         option3.setOnAction(event -> {
-            GreenColorRandomizer randomGreenColor = new GreenColorRandomizer();
+        	GreenColorRandomizer greenColorRandomizer = new GreenColorRandomizer(); 
             Color randomGreenColor = greenColorRandomizer.getRandomGreenColor();
             stage.getScene().setFill(randomGreenColor);
         });
@@ -82,4 +80,6 @@ public class GUIClass extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-}
+} 
+
+

@@ -6,7 +6,7 @@ import java.util.Random;
 import javafx.scene.paint.Color;
 
 public class GreenColorRandomizer {
-    private GreenColorRandomizer getRandomGreenColor() {
+    public Color getRandomGreenColor() {
         Random greenColor = new Random();
 
         double hue = 100 + greenColor.nextDouble() * 40;
@@ -14,5 +14,5 @@ public class GreenColorRandomizer {
         double lightness = 0.4 + greenColor.nextDouble() * 0.2;  
         return Color.hsb(hue, saturation, lightness); 
     }
-}
+} 
     
