@@ -10,7 +10,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.paint.Color;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.time.LocalDateTime;
@@ -22,8 +22,8 @@ public class userInterface1 extends Application {
     @Override
     public void start(Stage stage) {
         //establish container
-        HBox hbox = new HBox(10);
-        Scene scene = new Scene(hbox, 600, 400);
+        VBox vbox = new VBox(10);   // UPDATED changed HBox to Vbox
+        Scene scene = new Scene(vbox, 600, 400);
         stage.setScene(scene);
         stage.setTitle("User Interface I");
         stage.show();
@@ -44,7 +44,7 @@ public class userInterface1 extends Application {
         TextField userInputField = new TextField();
 
         //add components to container
-        hbox.getChildren().addAll(menuBar, userInputField, dateTimeField);
+        vbox.getChildren().addAll(menuBar, userInputField, dateTimeField);
 
         //first option: Display date and time
         option1.setOnAction(event -> {
@@ -59,7 +59,8 @@ public class userInterface1 extends Application {
             try (PrintWriter fileOutput = new PrintWriter(new FileWriter("log.txt", true))) {
                 fileOutput.println(textFieldInput);
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                System.err.println("Error writing to file: " + e.getMessage()); // UPDATE added print statement for error handler
             }
         });
 
@@ -68,7 +69,7 @@ public class userInterface1 extends Application {
             double randomGreen = Math.random() * 0.5 + 0.5;
             Color randomGreenColor = new Color(0.0, randomGreen, 0.0, 1.0);
             String colorString = String.format("#%02X%02X%02X", (int) (randomGreenColor.getRed() * 255), (int) (randomGreenColor.getGreen() * 255), (int) (randomGreenColor.getBlue() * 255));
-            HBox root = (HBox) stage.getScene().getRoot();
+            VBox root = (VBox) stage.getScene().getRoot();
             root.setStyle("-fx-background-color: " + colorString + ";");
             stage.getScene().getRoot().requestLayout();
         });
